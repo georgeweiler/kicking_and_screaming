@@ -1,0 +1,19 @@
+{
+  "name": "kicking-and-screaming",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/georgeweiler/kicking_and_screaming.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/georgeweiler/kicking_and_screaming/issues"
+  },
+  "homepage": "https://github.com/georgeweiler/kicking_and_screaming#readme"
+}

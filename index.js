@@ -153,7 +153,7 @@ let globalPositions = [
   "right outfield"
 ];
 let globalBattingLineup = [];
-
+let globalCurrentlyAtBat;
 let globalPlayersWithoutSubs;
 function addPlayer(){
   let playerObj = {
@@ -215,20 +215,33 @@ function createBattingLineup(){
         globalBattingLineup.push([randomPlayer.name, randomPlayer.sub])
       }
     }
+  rotateBattingLineup()
+  $('#start-game-btn').hide();
+}
+createBattingLineup = _.once(createBattingLineup);
 
-  let justBatted = globalBattingLineup.shift();
-  console.log("BATTING: ", justBatted)
-  $('#up-to-bat').text(justBatted[0])
-  if(justBatted.length === 1){
-    globalBattingLineup.push(justBatted);
+function rotateBattingLineup(){
+  globalCurrentlyAtBat = globalBattingLineup.shift();
+  $('#up-to-bat').html(`<li class='list-group-item'>${globalCurrentlyAtBat[0]}</li>`);
+  if(globalCurrentlyAtBat.length === 1){
+    globalBattingLineup.push(globalCurrentlyAtBat);
   } else {
     let temp = [
-      justBatted[1],
-      justBatted[0]
+      globalCurrentlyAtBat[1],
+      globalCurrentlyAtBat[0]
     ];
     globalBattingLineup.push(temp);
   }
+  let html = '';
+  for(var i = 0; i<3; i++){
+    html += `<li class='list-group-item'>${globalBattingLineup[i][0]}</li>`;
+  }
+  $('#batting-lineup').html(html)
 }
+function nextAtBat(){
+  rotateBattingLineup()
+}
+
 
 
 
