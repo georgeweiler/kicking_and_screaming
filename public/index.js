@@ -35,7 +35,7 @@ function addPlayer(){
     if(globalPositions.length === 0){
       //LOL GOOD LUCK UNDERSTANDING THIS SHIT
       globalPlayersWithoutSubs = _.filter(globalPlayers, player => !player.hasSub).map(player => player.name);
-      playerIdx = Math.floor(Math.random()*globalPlayersWithoutSubs.length);
+      let playerIdx = Math.floor(Math.random()*globalPlayersWithoutSubs.length);
       playerObj.position = `Sub for: ${globalPlayersWithoutSubs[playerIdx]}`;
       playerObj.hasSub = true;
       let sub = _.findWhere(globalPlayers, {name: globalPlayersWithoutSubs[playerIdx]});

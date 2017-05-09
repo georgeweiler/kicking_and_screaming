@@ -31,7 +31,7 @@ function addPlayer() {
       }).map(function (player) {
         return player.name;
       });
-      playerIdx = Math.floor(Math.random() * globalPlayersWithoutSubs.length);
+      var playerIdx = Math.floor(Math.random() * globalPlayersWithoutSubs.length);
       playerObj.position = "Sub for: " + globalPlayersWithoutSubs[playerIdx];
       playerObj.hasSub = true;
       var sub = _.findWhere(globalPlayers, { name: globalPlayersWithoutSubs[playerIdx] });
