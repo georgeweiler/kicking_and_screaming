@@ -16,6 +16,9 @@ let globalPositions = [
 let globalBattingLineup = [];
 let globalCurrentlyAtBat;
 let globalPlayersWithoutSubs;
+let globalKScore = 0;
+let globalOtherScore = 0;
+
 function addPlayer(){
   let playerObj = {
     name: $('#add-player-input').val()
@@ -106,4 +109,20 @@ function rotateBattingLineup(){
 }
 function nextAtBat(){
   rotateBattingLineup()
+}
+function addKScore(){
+  globalKScore++;
+  $("#ks-score").text(globalKScore);
+}
+function addOScore(){
+  globalOtherScore++;
+  $("#other-score").text(globalOtherScore);
+}
+function minusKScore(){
+  globalKScore--;
+  $("#ks-score").text(globalKScore);
+}
+function minusOScore(){
+  globalOtherScore--;
+  $("#other-score").text(globalOtherScore);
 }
