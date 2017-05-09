@@ -46,7 +46,7 @@
       <script src="index.js"></script>
       <nav class="nav-extended">
         <div class="nav-wrapper">
-          <a href="#" class="brand-logo">K & S</a>
+          <a href="#" class="brand-logo">Kicking & Screaming</a>
           <ul id="nav-mobile" class="right hide-on-med-and-down">
             <li><a href="sass.html">Sass</a></li>
             <li><a href="badges.html">Components</a></li>
@@ -69,7 +69,29 @@
       <div class="container">
         
       <div id="home">
-      <h2>I dont know what to put here...</h2>
+        <table class="table">
+          <thead>
+              <td style="text-align: center">K&S</td>
+              <td style="text-align: center">Other Team</td>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="text-align: center"id='ks-score'>0</td>
+              <td style="text-align: center"id='other-score'>0</td>
+            </tr>
+            <tr>
+              <td style="text-align: center"id='ks-score'>
+                <a class="waves-effect waves-light btn" onclick="addKScore()">+</a>
+                <a class="waves-effect waves-light btn" onclick="minusKScore()">-</a>
+              </td>
+              <td style="text-align: center"id='other-score'>
+                <a class="waves-effect waves-light btn" onclick="addOScore()">+</a>
+                <a class="waves-effect waves-light btn" onclick="minusOScore()">-</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
       </div>
       <div id="lineup" class="col s12">
         <div class="input-field add-player" >
