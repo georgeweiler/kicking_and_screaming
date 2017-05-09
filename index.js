@@ -20,6 +20,9 @@ let globalKScore = 0;
 let globalOtherScore = 0;
 
 function addPlayer(){
+  if($('#add-player-input').val() === ""){
+    return
+  }
   let playerObj = {
     name: $('#add-player-input').val()
   }
